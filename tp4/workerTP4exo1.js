@@ -1,4 +1,4 @@
-let intervalle = setInterval(workerLoop,1000);
+let intervalle = setInterval(workerLoop,10);
 function workerLoop() {
     console.log("Création message du worker");
     var x = Math.floor(Math.random() * 600);
