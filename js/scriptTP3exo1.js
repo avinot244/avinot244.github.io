@@ -18,7 +18,7 @@ class Circle {
         console.log(this.y);
         ctx.beginPath();
         ctx.arc(this.getX()+10, this.getY()+10, 10, 0, 2 * Math.PI);
-        ctx.stroke()
+        ctx.stroke();
     }
 }
 
