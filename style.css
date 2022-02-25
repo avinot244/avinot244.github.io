@@ -1,0 +1,203 @@
+/* ||||||||||||||||| General setup ||||||||||||||||| */
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+	background-color: #a9a9a9;
+}
+
+body {
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* ||||||||||||||||| typography ||||||||||||||||| */
+
+h1, h2, h3 {
+	font-family: 'Calibri', cursive;
+	color: #2a2a2a;
+}
+
+p, input, li {
+	font-family: 'Calibri', sans-serif;
+	color: #2a2a2a;
+}
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+	font-size: 3rem;
+	text-align: center;
+}
+
+h3 {
+  	font-size: 2.2rem;
+}
+
+p, li {
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* ||||||||||||||||| header layout ||||||||||||||||| */
+
+nav, article, aside, footer {
+	background-color: white;
+	padding: 1%;
+}
+
+nav {
+	height: 50px;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+/*style for home page*/
+.acceuil nav, aside {
+	background-color: #45b0e5;
+}
+
+.acceuil nav li:hover{
+	background-color:#71d0ff;
+	transition: 1s ease background-color;
+}
+
+/*style for html page*/
+nav.html, aside.html{
+	background-color: #9065e5;
+}	
+nav.html li:hover{
+	background-color:#b38dff;
+	transition: 1s ease background-color;
+}
+
+/*style for color-palet page*/
+.color-palet{
+	background-color: #45c5b0;
+}
+nav.color-palet li:hover{
+	background-color:#71e2d0;
+	transition: 1s ease background-color;
+}
+
+/*style for cv page*/
+.cv{
+	background-color:#7db545;
+}
+nav.cv li:hover{
+	background-color: #a2d471;
+	transition: 1s ease background-color;
+}
+
+/*style for js page*/
+.javascript{
+	background-color : #e5b045
+}
+nav.javascript li:hover{
+	background-color: #ffd071;
+	transition: 1s ease background-color;
+}
+
+
+nav ul {
+	padding: 0;
+	list-style-type: none;
+	flex: 2;
+	display: flex;
+}
+
+nav li {
+	display: inline;
+	text-align: center;
+	flex: 1;
+}
+
+nav a {
+	display: inline-block;
+	font-size: 2rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+}
+
+nav form {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 2em;
+}
+
+input {
+	font-size: 1.6rem;
+	height: 32px;
+}
+
+input[type="search"] {
+  	flex: 3;
+}
+
+input[type="submit"] {
+	flex: 1;
+	margin-left: 1rem;
+	background: #333;
+	border: 0;
+	color: white;
+}
+
+#play{
+	text-align: center;
+	background-color: #7d8995;
+	border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+	border-radius: 5px;
+}
+#play:hover{
+	background-color: #a2adb8;
+	transition : 0.5s ease background-color;
+}
+#play:active{
+	background-color: #8b98a6;
+}
+
+
+/* ||||||||||||||||| main layout ||||||||||||||||| */
+
+main {
+  	display: flex;
+}
+
+article {
+  	flex: 4;
+}
+
+aside {
+	flex: 1;
+	margin-left: 10px;
+}
+
+aside li {
+  	padding-bottom: 10px;
+}
+
+footer {
+ 	margin-top: 10px;
+}
+
+.img-color-palet{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+}
+

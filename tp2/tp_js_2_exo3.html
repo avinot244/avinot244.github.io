@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		EventTarget.addEvenListener(event,callback);
+	-->
+	<head>
+    	<meta charset="utf-8">
+
+    	<title>TP2 exo3</title>
+   		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script language = "JavaScript" src = "../js/scriptTP2exo3.js"></script>
+  	</head>
+
+  	<body>
+    	<header>
+      		<h1>TP2 exo3</h1>
+    	</header>
+
+    	<nav class = "javascript">
+			<ul>
+				<li><a href=".././index.html">Acceuil</a></li>
+				<li><a href=".././pageHTML.html">html</a></li>
+				<li><a href=".././javascript.html">JS</a></li>
+				<li><a href="../.page3.html">PHP</a></li>
+				<li><a href=".././page4.html">Vue</a></li>
+			</ul>
+     	</nav>
+     	<main>
+      		<article>
+				<h2>TP2 exo3</h2>
+				<p>Le but de cette séance de Travaux Pratiques est de faire des animation avec JavaScript</p>
+				<h3>Animation</h3>
+				<canvas id = "canvas"></canvas>
+				<h3>Code</h3>
+				<pre>
+                    let time = 0;
+                    var canvas;
+                    var ctx;
+                    let tblRect = [];
+
+                    class Rectangle {
+                        constructor(x, y){
+                            this.x = x;
+                            this.y = y;
+                        }
+                        setX (x) {this.x = x;}
+                        setY (y) {this.y = y;}
+                        getX () {return this.x;}
+                        getY () {return this.y;}
+
+                        updateRect (newX, newY) {
+                            this.setX(newX);
+                            this.setY(newY);
+                        }
+
+                        renderRect () {
+                            ctx.fillStyle = 'red';
+                            ctx.fillRect(this.getX(),this.getY(), 50, 50);
+                        }
+                    }
+
+                    function init () {
+                        canvas = document.getElementById('canvas'); 
+                        for (let i = 0 ; i < 2 ; i++) {
+                            if (i == 0) {
+                                tblRect.push(new Rectangle(0,0));
+                            }else{
+                                tblRect.push(new Rectangle(0,i*50+25));
+                            }
+                            
+                        }
+                    }
+                    function update () {
+                        if (time < 10) {
+                            tblRect.forEach(function(item){
+                                item.updateRect(time*10,item.getY());
+                            });
+                            time = time+1;
+                        }else{
+                            time = 0;
+                            clearInterval(intervalle);
+                            tblRect.forEach(function(item){
+                                item.updateRect(0,item.getY());
+                            });
+                        }
+                    }
+                    function render () {
+                        
+                        ctx.fillStyle = 'green';
+                        ctx.fillRect(0,0,600,600);
+                        tblRect.forEach(function(item){
+                            item.renderRect();
+                        })
+                    }
+                    function gameLoop () {
+                        //debugger;
+                        /*update*/
+                        update();
+                        /*render*/
+                        render();
+                        
+                    }
+                    function main () {
+                        canvas = document.getElementById('canvas');
+                        ctx = canvas.getContext('2d');
+                        init();
+                        let intervall = setInterval(gameLoop, 500);
+                        
+                    }
+
+
+                    window.addEventListener("DOMContentLoaded",main);
+				</pre>
+				<h3>TP2</h3>
+				<ul>
+					<li><a href = "./tp_js_2_exo1.html">tp_js_2_exo1.html</a></li>
+					<li><a href = "./tp_js_2_exo2.html">tp_js_2_exo2.html</a></li>
+					<li><a href = "./tp_js_2_exo3.html">tp_js_2_exo3.html</a></li>
+					<li><a href = "./tp_js_2_exo4.html">tp_js_2_exo4.html</a></li>
+					
+				</ul>
+				<h3>TP3</h3>
+				<ul>
+					<li><a href = "../tp3/tp_js_3_exo1.html">tp_js_3_exo1.html</a></li>
+					<li><a href = "../tp3/tp_js_3_exo2.html">tp_js_3_exo2.html</a></li>
+				</ul>
+      		</article>
+
+			<aside class = "javascript">
+				<h2>En relation</h2>
+				<ul>
+					<li><a href=".././color-palet.html">color palet</a></li>
+					<li><a href=".././cv.html">qui suis-je</a></li>
+					<li><a href="#"></a>relation3</li>
+					<li><a href="#"></a>relation4</li>
+				</ul>
+			</aside>
+
+		</main>
+
+		<footer>
+			<p>©Copyright VINOT Aymeric </p>
+		</footer>
+  	</body>
+</html>
