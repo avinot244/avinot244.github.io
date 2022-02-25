@@ -1,11 +1,9 @@
-var monWorker;
-
-
 function main() {
     alert("Hello World");
     if (window.Worker){
         console.log("Création du worker");
-        monWorker = new Worker("worker/workerTP4exo1.js");
+        var monWorker = new Worker("workerTP4exo1.js");
+        console.log("coucou");
         monWorker.onmessage = function(e){
             console.log("Message reçu avec nb = "+e.data[0]);
         }
