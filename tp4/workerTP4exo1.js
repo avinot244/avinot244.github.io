@@ -4,4 +4,4 @@ function workerLoop() {
     var nb = Math.floor(Math.random() * 10);
     console.log("envoi du message au script principal");
     this.postMessage(nb);
-}
+}//
