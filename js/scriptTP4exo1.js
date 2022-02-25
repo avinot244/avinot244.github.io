@@ -5,7 +5,7 @@ function main() {
         var monWorker = new Worker("workerTP4exo1.js");
         console.log("coucou");
         monWorker.onmessage = function(e){
-            console.log("Message reçu avec nb = "+e.data[0]);
+            console.log("Message reçu avec x = "+e.data[0]+" et y = "+e.data[1]);
         }
     }
 }
